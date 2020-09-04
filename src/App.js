@@ -7,7 +7,7 @@ const getTest = () => {
 }
 
 function App () {
-    const aaa = getTest()
+        const aaa = getTest()
 
     return (
         <div className='App'>
