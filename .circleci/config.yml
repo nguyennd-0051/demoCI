@@ -9,6 +9,8 @@ jobs:
       - run: yarn lint
 
   deploy-job:
+    docker:
+      - image: circleci/node:12.9.1-browsers
     steps:
       - run:
           name: Install Firebase Tools
