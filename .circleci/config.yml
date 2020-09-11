@@ -9,16 +9,13 @@ jobs:
       - run: yarn lint
 
   deploy-job:
-    docker:
-      - image: circleci/node:12.9.1-browsers
-    working_directory: /tmp/my-project
     steps:
       - run:
           name: Install Firebase Tools
-          command: yarn add --prefix=./firebase-deploy firebase-tools
+          command: yarn add firebase-tools
       - run:
           name: Deploy Master to Firebase
-          command: ./firebase-deploy/node_modules/.bin/firebase deploy --token=$FIREBASE_DEPLOY_TOKEN
+          command: /node_modules/.bin/firebase deploy --token=$FIREBASE_DEPLOY_TOKEN
 
 workflows:
   version: 2
