@@ -31,7 +31,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - .    
+            - .
       - run:
           name: Deploy Master to Firebase
           command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_DEPLOY_TOKEN"
@@ -40,5 +40,11 @@ workflows:
   version: 2
   build_test_deploy:
     jobs:
-      - build-then-check-eslint      
-      - build-then-deploy
+      - build-then-check-eslint    
+      - hold:
+          type: approval
+          requires: 
+            - build-then-check-eslint  
+      - build-then-deploy:
+          requires:
+            - hold
