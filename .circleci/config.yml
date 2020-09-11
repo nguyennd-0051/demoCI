@@ -16,6 +16,9 @@ jobs:
           name: Install Firebase Tools
           command: yarn add firebase-tools
       - run:
+          name: testsss
+          command: ls -l
+      - run:
           name: Deploy Master to Firebase
           command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_DEPLOY_TOKEN
 
