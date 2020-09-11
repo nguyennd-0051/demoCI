@@ -15,10 +15,10 @@ jobs:
     steps:
       - run:
           name: Install Firebase Tools
-          command: yarn add firebase-tools
+          command: yarn add --prefix=./firebase-deploy firebase-tools
       - run:
           name: Deploy Master to Firebase
-          command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_DEPLOY_TOKEN
+          command: ./firebase-deploy/node_modules/.bin/firebase deploy --token=$FIREBASE_DEPLOY_TOKEN
 
 workflows:
   version: 2
