@@ -1,10 +1,6 @@
 version: 2.1
 jobs:
   build-then-check-eslint:
-    filters:
-      branches:
-        ignore:
-          - master
     docker:
       - image: circleci/node:12.9.1-browsers
     steps:
