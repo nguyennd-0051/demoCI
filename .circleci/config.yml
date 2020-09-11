@@ -1,5 +1,13 @@
 version: 2.1
 jobs:
+  build-then-check-eslint:
+    docker:
+      - image: circleci/node:12.9.1-browsers
+    steps:
+      - checkout
+      - run: yarn install
+      - run: yarn lint
+
   build-then-deploy:
     docker:
       - image: circleci/node:12.9.1-browsers
@@ -30,6 +38,16 @@ jobs:
 
 workflows:
   version: 2
+  check-eslint:
+    jobs:
+      - build-then-check-eslint
+    filters:
+      branches:
+        ignore: master
+
   deploy:
     jobs:
       - build-then-deploy
+    filters:
+      branches:
+        only: master
