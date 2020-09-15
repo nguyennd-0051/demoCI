@@ -17,6 +17,7 @@ function App () {
                     Edit <code>src/App.js</code> and save to reload.
                 </p>
                 <h1>test ket hop</h1>
+                <h2>test deploy on merge pull</h2>
                 <a
                     className='App-link'
                     href='https://reactjs.org'
