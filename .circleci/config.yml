@@ -42,6 +42,8 @@ jobs:
   build-then-deploy:
     executor: my-executor
     steps:
+      - attach_workspace:
+          at: .
       - checkout
       - run:
           name: Build
