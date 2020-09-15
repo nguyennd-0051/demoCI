@@ -44,7 +44,10 @@ workflows:
       - hold:
           type: approval
           requires: 
-            - build-then-check-eslint  
+            - build-then-check-eslint
+          filters:
+            branches:
+              only: master
       - build-then-deploy:
           requires:
             - hold
