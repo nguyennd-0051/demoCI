@@ -4,10 +4,10 @@ executors:
   my-executor:
     docker:
       - image: circleci/node:12.9.1-browsers
-    working_directory: ~/my-repo
 
 jobs:
   prepare-dependencies:
+    working_directory: ~/my-project
     executor: my-executor
     steps:
       - checkout
@@ -33,7 +33,6 @@ jobs:
     steps:
       - attach_workspace:
             at: .
-      - checkout
       - run:
           name: Check ESLint
           command:
@@ -44,7 +43,6 @@ jobs:
     steps:
       - attach_workspace:
           at: .
-      - checkout
       - run:
           name: Build
           command: yarn build
