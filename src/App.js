@@ -3,11 +3,11 @@ import logo from './logo.svg'
 import './App.css'
 
 const getTest = () => {
-    return 'sdjfhsssfjsdhfjsdhfjksdhfjkashdflskdfhajsdhfksjhdfjksdhfjksdhfjkdhjkf sjdfhjsdfhsjdhfjsdfhjsdfhjsfhjdsfhjsfhjfhsjkfhskjhfskjdhfjsdfhjksdhfjsd'
+    return 'Cuka Blyat'
 }
 
 function App () {
-    const aaa = getTest()
+    const getTest = getTest()
 
     return (
         <div className='App'>
@@ -25,7 +25,7 @@ function App () {
                     rel='noopener noreferrer'
                 >
                     from highland
-                    this is new Learn React {aaa}
+                    this is new Learn React {getTest}
                 </a>
             </header>
         </div>
