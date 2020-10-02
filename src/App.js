@@ -3,7 +3,7 @@ import logo from './logo.svg'
 import './App.css'
 
 const getTest = () => {
-    return 'sdjfhsssfjsdhfjsdhfjksdhfjkashdflskdfhajsdhfksjhdfjksdhfjksdhfjkdhjkf sjdfhjsdfhsjdhfjsdfhjsdfhjsfhjdsfhjsfhjfhsjkfhskjhfskjdhfjsdfhjksdhfjsd'
+    return 'this is get test func';
 }
 
 function App () {
